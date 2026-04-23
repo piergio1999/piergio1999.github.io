@@ -2,123 +2,280 @@
 <html lang="it">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Piergiorgio Lovaglio</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial;
-    display: flex;
-    background: #f4f8fb;
+* {
+    box-sizing: border-box;
 }
 
-/* SIDEBAR */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eef4f8;
+    color: #2b2b2b;
+}
+
 .sidebar {
-    width: 280px;
-    background: #2c5d8a;
-    color: white;
-    padding: 20px;
-    height: 100vh;
     position: fixed;
+    top: 0;
+    left: 0;
+    width: 290px;
+    height: 100vh;
+    background: linear-gradient(180deg, #2f6690, #3f88c5);
+    color: white;
+    padding: 30px 22px;
+    overflow-y: auto;
 }
 
 .sidebar img {
-    width: 120px;
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
     border-radius: 50%;
     display: block;
-    margin: 0 auto 20px;
+    margin: 0 auto 18px;
+    border: 4px solid rgba(255,255,255,0.35);
 }
 
-.sidebar h2 {
-    text-align: center;
+.sidebar h1 {
     margin: 0;
-}
-
-.sidebar p {
     text-align: center;
-    font-size: 14px;
+    font-size: 28px;
+    line-height: 1.2;
 }
 
-.sidebar a {
+.subtitle {
+    text-align: center;
+    font-size: 15px;
+    margin: 10px 0 18px;
+    opacity: 0.95;
+}
+
+.info-box {
+    background: rgba(255,255,255,0.12);
+    border-radius: 14px;
+    padding: 14px;
+    margin-bottom: 22px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.info-box a,
+.menu a,
+.social a {
     color: white;
-    display: block;
-    margin: 10px 0;
     text-decoration: none;
 }
 
-/* CONTENUTO */
+.menu {
+    margin-top: 12px;
+}
+
+.menu a {
+    display: block;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    transition: background 0.2s ease;
+}
+
+.menu a:hover {
+    background: rgba(255,255,255,0.16);
+}
+
+.social {
+    margin-top: 22px;
+    font-size: 14px;
+}
+
+.social a {
+    display: block;
+    margin-bottom: 8px;
+}
+
 .content {
-    margin-left: 300px;
-    padding: 40px;
-    max-width: 900px;
+    margin-left: 290px;
+    padding: 36px 34px;
 }
 
-h1 {
-    color: #2c5d8a;
+.topbar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
 }
 
-section {
-    margin-bottom: 40px;
+.lang {
+    background: white;
+    border-radius: 999px;
+    padding: 8px 14px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    font-size: 14px;
 }
 
-h2 {
-    color: #4a90e2;
+.lang a {
+    text-decoration: none;
+    color: #2f6690;
+    font-weight: bold;
+    margin: 0 4px;
 }
 
+.hero {
+    background: white;
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    margin-bottom: 24px;
+}
+
+.hero h2 {
+    margin-top: 0;
+    color: #2f6690;
+    font-size: 30px;
+}
+
+.hero p {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+.section-card {
+    background: white;
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    margin-bottom: 22px;
+}
+
+.section-card h3 {
+    margin-top: 0;
+    color: #2f6690;
+    font-size: 24px;
+}
+
+.section-card p,
+.section-card li {
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.section-card ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+    .sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 20px;
+    }
+}
 </style>
 </head>
-
 <body>
 
 <div class="sidebar">
-    <img src="https://via.placeholder.com/120" alt="Foto">
+    <img src="foto.jpg" alt="Piergiorgio Lovaglio">
 
-    <h2>Piergiorgio Lovaglio</h2>
-    <p>Professore Ordinario</p>
+    <h1>Piergiorgio Lovaglio</h1>
+    <div class="subtitle">Professore Ordinario di Statistica Economica</div>
 
-    <a href="#profilo">Profilo</a>
-    <a href="#pubblicazioni">Pubblicazioni</a>
-    <a href="#progetti">Progetti</a>
-    <a href="#didattica">Didattica</a>
-    <a href="#altro">Altro</a>
-    <a href="#contatti">Contatti</a>
+    <div class="info-box">
+        Università degli Studi di Milano-Bicocca<br>
+        Dipartimento di Statistica e Metodi Quantitativi<br>
+        <a href="mailto:piergiorgio.lovaglio@unimib.it">piergiorgio.lovaglio@unimib.it</a>
+    </div>
+
+    <div class="menu">
+        <a href="#profilo">Profilo</a>
+        <a href="#pubblicazioni">Pubblicazioni</a>
+        <a href="#progetti">Progetti</a>
+        <a href="#didattica">Didattica</a>
+        <a href="#altro">Altro</a>
+        <a href="#contatti">Contatti</a>
+    </div>
+
+    <div class="social">
+        <a href="#">LinkedIn</a>
+        <a href="#">Google Scholar</a>
+        <a href="#">ORCID</a>
+        <a href="#">Scopus</a>
+    </div>
 </div>
 
 <div class="content">
+    <div class="topbar">
+        <div class="lang">
+            <a href="#">IT</a> | <a href="#">EN</a>
+        </div>
+    </div>
 
-<section id="profilo">
-<h1>Profilo</h1>
-<p>
-Professore Ordinario presso Università Milano-Bicocca.
-Attività di ricerca in statistica, data mining e machine learning.
-</p>
-</section>
+    <div class="hero" id="profilo">
+        <h2>Profilo</h2>
+        <p>
+            Professore Ordinario presso l’Università di Milano-Bicocca.
+            Le sue attività di ricerca riguardano statistica, data mining,
+            machine learning, modelli avanzati per l’analisi economica e sociale,
+            valutazione dei sistemi sanitari e analisi del mercato del lavoro.
+        </p>
+    </div>
 
-<section id="pubblicazioni">
-<h2>Pubblicazioni</h2>
-<p>Link a Google Scholar, ORCID, Scopus.</p>
-</section>
+    <div class="section-card" id="pubblicazioni">
+        <h3>Pubblicazioni</h3>
+        <p>
+            Sezione dedicata alle principali pubblicazioni scientifiche
+            e ai profili bibliometrici.
+        </p>
+        <ul>
+            <li>Google Scholar</li>
+            <li>ORCID</li>
+            <li>Scopus</li>
+            <li>Web of Science</li>
+            <li>PubMed</li>
+        </ul>
+    </div>
 
-<section id="progetti">
-<h2>Progetti</h2>
-<p>Progetti europei e ricerca internazionale.</p>
-</section>
+    <div class="section-card" id="progetti">
+        <h3>Progetti</h3>
+        <p>
+            Progetti europei e internazionali in ambito statistico,
+            economico e sociale, con particolare attenzione a data science,
+            mercato del lavoro e sistemi informativi.
+        </p>
+    </div>
 
-<section id="didattica">
-<h2>Didattica</h2>
-<p>Corsi universitari e attività di dottorato.</p>
-</section>
+    <div class="section-card" id="didattica">
+        <h3>Didattica</h3>
+        <p>
+            Attività di docenza nei corsi di statistica, data mining,
+            machine learning e modelli quantitativi presso l’Università di Milano-Bicocca.
+        </p>
+    </div>
 
-<section id="altro">
-<h2>Altro</h2>
-<p>Altri interessi.</p>
-</section>
+    <div class="section-card" id="altro">
+        <h3>Altro</h3>
+        <p>
+            Area dedicata a materiali, note, commenti, immagini,
+            file allegati e contenuti aggiuntivi aggiornabili nel tempo.
+        </p>
+    </div>
 
-<section id="contatti">
-<h2>Contatti</h2>
-<p>Email: piergiorgio.lovaglio@unimib.it</p>
-</section>
-
+    <div class="section-card" id="contatti">
+        <h3>Contatti</h3>
+        <p>
+            Email: <a href="mailto:piergiorgio.lovaglio@unimib.it">piergiorgio.lovaglio@unimib.it</a>
+        </p>
+        <p>
+            Università degli Studi di Milano-Bicocca
+        </p>
+    </div>
 </div>
 
 </body>
