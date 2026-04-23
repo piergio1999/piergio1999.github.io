@@ -1,82 +1,125 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <title>Piergiorgio Lovaglio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f5f7fa;
-            color: #333;
-        }
-        header {
-            background-color: #1e3a5f;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-        nav {
-            background: #ffffff;
-            padding: 10px;
-            text-align: center;
-            border-bottom: 1px solid #ddd;
-        }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: #1e3a5f;
-            font-weight: bold;
-        }
-        section {
-            padding: 40px;
-            max-width: 900px;
-            margin: auto;
-        }
-        h2 {
-            color: #1e3a5f;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>Piergiorgio Lovaglio</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    display: flex;
+    background: #f4f8fb;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 280px;
+    background: #2c5d8a;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+}
+
+.sidebar img {
+    width: 120px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin: 0;
+}
+
+.sidebar p {
+    text-align: center;
+    font-size: 14px;
+}
+
+.sidebar a {
+    color: white;
+    display: block;
+    margin: 10px 0;
+    text-decoration: none;
+}
+
+/* CONTENUTO */
+.content {
+    margin-left: 300px;
+    padding: 40px;
+    max-width: 900px;
+}
+
+h1 {
+    color: #2c5d8a;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    color: #4a90e2;
+}
+
+</style>
 </head>
+
 <body>
 
-<header>
-    <h1>Piergiorgio Lovaglio</h1>
-    <p>Professore Ordinario di Statistica Economica</p>
-</header>
+<div class="sidebar">
+    <img src="https://via.placeholder.com/120" alt="Foto">
 
-<nav>
+    <h2>Piergiorgio Lovaglio</h2>
+    <p>Professore Ordinario</p>
+
     <a href="#profilo">Profilo</a>
     <a href="#pubblicazioni">Pubblicazioni</a>
     <a href="#progetti">Progetti</a>
+    <a href="#didattica">Didattica</a>
     <a href="#altro">Altro</a>
     <a href="#contatti">Contatti</a>
-</nav>
+</div>
+
+<div class="content">
 
 <section id="profilo">
-    <h2>Profilo</h2>
-    <p>Professore presso Università Milano-Bicocca. Esperto in statistica, data mining e modelli avanzati.</p>
+<h1>Profilo</h1>
+<p>
+Professore Ordinario presso Università Milano-Bicocca.
+Attività di ricerca in statistica, data mining e machine learning.
+</p>
 </section>
 
 <section id="pubblicazioni">
-    <h2>Pubblicazioni</h2>
-    <p>Consulta le mie pubblicazioni su Google Scholar, Scopus e ORCID.</p>
+<h2>Pubblicazioni</h2>
+<p>Link a Google Scholar, ORCID, Scopus.</p>
 </section>
 
 <section id="progetti">
-    <h2>Progetti</h2>
-    <p>Progetti europei e internazionali nel campo della statistica e del mercato del lavoro.</p>
+<h2>Progetti</h2>
+<p>Progetti europei e ricerca internazionale.</p>
+</section>
+
+<section id="didattica">
+<h2>Didattica</h2>
+<p>Corsi universitari e attività di dottorato.</p>
 </section>
 
 <section id="altro">
-    <h2>Altro</h2>
-    <p>Qui potrai aggiungere post, materiali, file e contenuti.</p>
+<h2>Altro</h2>
+<p>Altri interessi.</p>
 </section>
 
 <section id="contatti">
-    <h2>Contatti</h2>
-    <p>Email: piergiorgio.lovaglio@unimib.it</p>
+<h2>Contatti</h2>
+<p>Email: piergiorgio.lovaglio@unimib.it</p>
 </section>
+
+</div>
 
 </body>
 </html>
