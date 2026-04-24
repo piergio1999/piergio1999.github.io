@@ -6,233 +6,545 @@
 <title>Piergiorgio Lovaglio</title>
 
 <style>
+* { box-sizing: border-box; }
+
 body {
   margin: 0;
-  font-family: Arial;
+  font-family: Arial, sans-serif;
   background: #eef4f8;
+  color: #2b2b2b;
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
 }
 
 .sidebar {
   width: 300px;
-  position: fixed;
-  height: 100%;
   background: linear-gradient(180deg, #2f6690, #3f88c5);
   color: white;
-  padding: 20px;
+  padding: 28px 22px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 .sidebar img {
-  width: 120px;
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
   border-radius: 50%;
   display: block;
-  margin: auto;
+  margin: 0 auto 18px;
+  border: 4px solid rgba(255,255,255,0.35);
 }
 
 .sidebar h1 {
+  font-size: 28px;
+  line-height: 1.2;
   text-align: center;
+  margin: 0 0 10px 0;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 18px;
+}
+
+.info-box {
+  background: rgba(255,255,255,0.12);
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 22px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.info-box a,
+.social a {
+  color: white;
+  text-decoration: none;
 }
 
 .menu button {
   display: block;
   width: 100%;
-  margin: 8px 0;
-  padding: 10px;
-  background: none;
-  border: none;
-  color: white;
   text-align: left;
+  padding: 11px 12px;
+  margin-bottom: 8px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: white;
+  font-size: 15px;
   cursor: pointer;
 }
 
-.menu button:hover {
-  background: rgba(255,255,255,0.2);
+.menu button:hover,
+.menu button.active {
+  background: rgba(255,255,255,0.18);
+}
+
+.social {
+  margin-top: 24px;
+  font-size: 14px;
+}
+
+.social a {
+  display: block;
+  margin-bottom: 8px;
 }
 
 .content {
-  margin-left: 320px;
-  padding: 30px;
+  margin-left: 300px;
+  width: calc(100% - 300px);
+  padding: 34px;
 }
 
-.panel { display: none; }
+.topbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+}
+
+.lang button {
+  background: white;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  color: #2f6690;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.panel {
+  display: none;
+  background: white;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  min-height: 70vh;
+}
+
 .panel.active { display: block; }
 
-.lang-btn {
-  float: right;
-  cursor: pointer;
-  font-weight: bold;
+.panel h2 {
+  margin-top: 0;
+  color: #2f6690;
+  font-size: 30px;
 }
 
-h2 { color: #2f6690; }
+.panel h3 {
+  color: #2f6690;
+  margin-top: 28px;
+  font-size: 22px;
+}
+
+.panel p,
+.panel li {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.panel ul,
+.panel ol {
+  padding-left: 22px;
+}
+
+.panel ol li {
+  margin-bottom: 10px;
+}
+
+a {
+  color: #2f6690;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.link-buttons a {
+  display: inline-block;
+  margin-right: 12px;
+  margin-bottom: 10px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #e7f0f8;
+  color: #2f6690;
+}
+
+.en { display: none; }
+
+@media (max-width: 900px) {
+  .layout { display: block; }
+
+  .sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+
+  .content {
+    margin-left: 0;
+    width: 100%;
+    padding: 20px;
+  }
+}
 </style>
 </head>
 
 <body>
 
-<div class="sidebar">
-<img src="foto.jpg">
+<div class="layout">
 
-<h1>Piergiorgio Lovaglio</h1>
+<aside class="sidebar">
+  <img src="foto.jpg" alt="Piergiorgio Lovaglio">
 
-<div class="menu">
-<button onclick="showPanel('profilo')">Profilo</button>
-<button onclick="showPanel('pubblicazioni')">Pubblicazioni</button>
-<button onclick="showPanel('progetti')">Progetti</button>
-<button onclick="showPanel('didattica')">Didattica</button>
-<button onclick="showPanel('cv')">CV</button>
-<button onclick="showPanel('contatti')">Contatti</button>
-</div>
-</div>
+  <h1>Piergiorgio Lovaglio</h1>
+  <div class="subtitle">Professore Ordinario di Statistica Economica</div>
 
-<div class="content">
+  <div class="info-box">
+    Università degli Studi di Milano-Bicocca<br>
+    Dipartimento di Statistica e Metodi Quantitativi<br>
+    <a href="mailto:piergiorgio.lovaglio@unimib.it">piergiorgio.lovaglio@unimib.it</a>
+  </div>
 
-<div class="lang-btn" onclick="toggleLang()">IT | EN</div>
+  <div class="menu">
+    <button class="tab-button active" data-panel="profilo">Profilo</button>
+    <button class="tab-button" data-panel="pubblicazioni">Pubblicazioni</button>
+    <button class="tab-button" data-panel="progetti">Progetti</button>
+    <button class="tab-button" data-panel="didattica">Didattica</button>
+    <button class="tab-button" data-panel="altro">Altro</button>
+    <button class="tab-button" data-panel="cv">CV</button>
+    <button class="tab-button" data-panel="contatti">Contatti</button>
+  </div>
 
-<!-- PROFILO -->
-<div id="profilo" class="panel active">
+  <div class="social">
+    <a href="https://www.unimib.it/pietro-giorgio-lovaglio" target="_blank">Pagina Unimib</a>
+    <a href="https://www.linkedin.com/in/piergiorgio-lovaglio-76443033/" target="_blank">LinkedIn</a>
+    <a href="https://scholar.google.com/citations?hl=it&user=hNQB2YwAAAAJ&view_op=list_works" target="_blank">Google Scholar</a>
+    <a href="https://orcid.org/0000-0002-2340-0547" target="_blank">ORCID</a>
+    <a href="https://www.scopus.com/authid/detail.uri?authorId=6505999619" target="_blank">Scopus</a>
+    <a href="https://www.webofscience.com/wos/author/record/1673078" target="_blank">Web of Science</a>
+    <a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=lovaglio+p" target="_blank">PubMed</a>
+  </div>
+</aside>
 
-<div class="it">
-<h2>Posizione attuale</h2>
-<p>Professore Ordinario di Statistica Economica – Università di Milano-Bicocca</p>
+<main class="content">
 
-<h2>Risultati VQR</h2>
-<p>Valutazione della ricerca con risultati positivi nei diversi esercizi VQR.</p>
-
-<h2>Posizioni precedenti</h2>
-<ul>
-<li>Professore Associato</li>
-<li>Ricercatore universitario</li>
-</ul>
-
-<h2>Istruzione</h2>
-<ul>
-<li>PhD in Statistica</li>
-<li>Laurea in Discipline Economiche e Sociali</li>
-</ul>
-</div>
-
-<div class="en" style="display:none">
-<h2>Current Position</h2>
-<p>Full Professor of Economic Statistics – University of Milano-Bicocca</p>
-
-<h2>Research Evaluation (VQR)</h2>
-<p>Positive evaluation results across national research assessment exercises.</p>
-
-<h2>Previous Positions</h2>
-<ul>
-<li>Associate Professor</li>
-<li>Assistant Professor</li>
-</ul>
-
-<h2>Education</h2>
-<ul>
-<li>PhD in Statistics</li>
-<li>Degree in Economics and Social Sciences</li>
-</ul>
+<div class="topbar">
+  <div class="lang">
+    <button onclick="setLang('it')">IT</button>
+    <button onclick="setLang('en')">EN</button>
+  </div>
 </div>
 
-</div>
+<section id="profilo" class="panel active">
 
-<!-- PROGETTI -->
-<div id="progetti" class="panel">
+  <div class="it">
+    <h2>Profilo</h2>
 
-<div class="it">
-<h2>Progetti</h2>
+    <h3>Posizione attuale</h3>
+    <p>
+      Professore Ordinario nel settore scientifico disciplinare SECS-S/03 STATISTICA ECONOMICA (dal 2018), presso Dipartimento di Statistica e Metodi Quantitativi, Università Milano Bicocca.
+    </p>
+    <p>
+      Attestazione ANVUR possesso titoli ed indicatori come COMPONENTE di commissioni Abilitazione Scientifica Nazionale (dal 13-12-2023).
+    </p>
+    <p>
+      Senior Researcher presso CRISP - Centro di ricerca interuniversitario per i servizi di pubblica utilità - c/o Università Milano Bicocca (dal 2001).
+    </p>
+    <p>
+      Vice coordinatore (2025-) del Dottorato accreditato MIUR in “ECONOMIA, STATISTICA E DATA SCIENCE”, (DOT1889171) Università degli studi di Milano Bicocca (AA 21/22, 22/23, 23/24, 24/25).
+    </p>
 
-<h3>Board scientifici istituzionali</h3>
-<ul>
-<li>ARIANNA Project</li>
-<li>Progetto Demetra</li>
-</ul>
+    <h3>Risultati VQR (Valutazione dei prodotti della ricerca da parte del MIUR)</h3>
+    <ul>
+      <li>Prodotti 2015-2019: Buono, Molto Buono/Eccellente, Eccellente, Eccellente estremamente rilevante</li>
+      <li>Prodotti 2011-2014: Eccellente, Eccellente</li>
+      <li>Prodotti 2004-2010: Eccellente, Buono, Buono</li>
+    </ul>
 
-<h3>Ricadute istituzionali delle ricerche svolte</h3>
-<p>
-Le attività di ricerca hanno contribuito allo sviluppo di modelli statistici
-applicati a politiche pubbliche, sanità, mercato del lavoro e sistemi educativi.
-</p>
-</div>
+    <h3>Posizioni precedenti</h3>
+    <ul>
+      <li>Coordinatore corso di Laurea Triennale in “Statistica e Gestione Informazioni”, Università Milano Bicocca (AA 2019/2020 - 2021/2022).</li>
+      <li>Professore Associato confermato nel settore scientifico disciplinare SECS-S/01 STATISTICA (da 2006), presso Dipartimento di Statistica e Metodi Quantitativi, Università Milano Bicocca.</li>
+      <li>Ricercatore universitario (settore disciplinare SECS-S/01 STATISTICA) presso Università di Milano Bicocca (2002-2005), Dipartimento di Statistica, Università Milano Bicocca.</li>
+    </ul>
 
-<div class="en" style="display:none">
-<h2>Projects</h2>
+    <h3>Istruzione</h3>
+    <ul>
+      <li>2001 Dottorato di Ricerca in Statistica Metodologica (voto Ampiamente positivo), Facoltà di Economia Milano-Bicocca. Tesi: Modelli con variabili latenti ed indicatori di tipo misto (Rel. Prof. Giuseppe Boari).</li>
+      <li>1997 Laurea in Scienze Statistiche ed Economiche (voto 108/110), Università degli Studi di Bologna. Tesi: Analisi, stima e distribuzione del capitale umano. (Rel. Prof. Camilo Dagum).</li>
+    </ul>
+  </div>
 
-<h3>Scientific Boards</h3>
-<ul>
-<li>ARIANNA Project</li>
-<li>Demetra Project</li>
-</ul>
+  <div class="en">
+    <h2>Profile</h2>
 
-<h3>Institutional Impact</h3>
-<p>
-Research activities contributed to the development of statistical models
-applied to public policies, healthcare systems, labour markets and education.
-</p>
-</div>
+    <h3>Current Position</h3>
+    <p>
+      Full Professor of Economic Statistics, Department of Statistics and Quantitative Methods, University of Milano-Bicocca, since 2018.
+    </p>
+    <p>
+      ANVUR certification for eligibility as member of National Scientific Qualification committees since 13 December 2023.
+    </p>
+    <p>
+      Senior Researcher at CRISP - Inter-University Research Center on Public Services, University of Milano-Bicocca, since 2001.
+    </p>
+    <p>
+      Deputy Coordinator, since 2025, of the PhD program “Economics, Statistics and Data Science”, University of Milano-Bicocca.
+    </p>
 
-</div>
+    <h3>Research Evaluation (VQR)</h3>
+    <ul>
+      <li>Products 2015-2019: Good, Very good/Excellent, Excellent, Excellent extremely relevant</li>
+      <li>Products 2011-2014: Excellent, Excellent</li>
+      <li>Products 2004-2010: Excellent, Good, Good</li>
+    </ul>
 
-<!-- DIDATTICA -->
-<div id="didattica" class="panel">
+    <h3>Previous Positions</h3>
+    <ul>
+      <li>Academic Coordinator of the Undergraduate Program in “Statistics and Information Management”, University of Milano-Bicocca (2019/2020 - 2021/2022).</li>
+      <li>Associate Professor of Statistics, Department of Statistics and Quantitative Methods, University of Milano-Bicocca.</li>
+      <li>Researcher in Statistics, Department of Statistics, University of Milano-Bicocca (2002-2005).</li>
+    </ul>
 
-<div class="it">
-<h2>Didattica</h2>
+    <h3>Education</h3>
+    <ul>
+      <li>2001 PhD in Statistical Methodology, Faculty of Economics, University of Milano-Bicocca. Thesis: Latent variables models with mixed manifest variables.</li>
+      <li>1997 Master's degree in Statistical and Economic Sciences, University of Bologna. Thesis: Analysis, estimate and distribution of Human Capital.</li>
+    </ul>
+  </div>
 
-<p>
-Dall’A.A. 2007/2008 ad oggi, attività di docenza nei corsi di Analisi dei dati,
-Analisi Multivariata, Statistica computazionale,
-<a href="https://elearning.unimib.it/course/info.php?id=60669">Data Mining e Machine Learning</a>
-presso Università di Milano-Bicocca.
-</p>
+</section>
 
-<h3>Corsi universitari e master</h3>
-<ul>
-<li>Data Mining</li>
-<li>Machine Learning</li>
-<li>Analisi Multivariata</li>
-</ul>
-</div>
+<section id="pubblicazioni" class="panel">
+  <div class="it">
+    <h2>Pubblicazioni</h2>
+    <p>Profili completi:</p>
+    <div class="link-buttons">
+      <a href="https://boa.unimib.it/simple-search?query=&sort_by=dc.date.issued_dt&order=desc&rpp=25&filter_field=contributorAppartenenza&filter_type=equals&filter_value=DIPARTIMENTO+DI+STATISTICA+E+METODI+QUANTITATIVI&filter_value_display=DIPARTIMENTO+DI+STATISTICA+E+METODI+QUANTITATIVI&etal=0&filtername=author&filterquery=rp04411&filterquerydisplay=LOVAGLIO%2c+PIETRO+GIORGIO&filtertype=authority" target="_blank">BOA Unimib</a>
+      <a href="https://scholar.google.com/citations?hl=it&user=hNQB2YwAAAAJ&view_op=list_works" target="_blank">Google Scholar</a>
+      <a href="https://orcid.org/0000-0002-2340-0547" target="_blank">ORCID</a>
+      <a href="https://www.scopus.com/authid/detail.uri?authorId=6505999619" target="_blank">Scopus</a>
+      <a href="https://www.webofscience.com/wos/author/record/1673078" target="_blank">Web of Science</a>
+      <a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=lovaglio+p" target="_blank">PubMed</a>
+    </div>
 
-<div class="en" style="display:none">
-<h2>Teaching</h2>
+    <ol reversed>
+      <li><a href="https://doi.org/10.1016/j.rie.2026.101126" target="_blank">Muzzi S., Berta P., Lovaglio P.G. et al. (2026) The effect of COVID-19 pandemic on non-deferrable diseases. Research in Economics.</a></li>
+      <li><a href="https://doi.org/10.1177/01600176261426488" target="_blank">Lovaglio P.G. (2026) Employment and Labour Participation in the Post-COVID-19 EU: A Regional Analysis Using LFS and Online Job Data. International Regional Science Review.</a></li>
+      <li><a href="https://doi.org/10.1111/labr.70008" target="_blank">Lovaglio P.G., Mezzanzanica M. (2026) Analyzing non-random selectivity in online job advertisements using Eurostat benchmark data and generalized sample selection models. LABOUR.</a></li>
+      <li><a href="https://doi.org/10.1002/for.70090" target="_blank">Lovaglio P.G., Mezzanzanica M. (2026) Forecasting new employment using non-representative online job advertisements. Journal of Forecasting.</a></li>
+      <li><a href="https://doi.org/10.1007/978-3-031-96033-8_14" target="_blank">Muzzì S., Berta P., Lovaglio P.G., Verzillo S. (2025) The Impact of COVID-19 Pandemic on Non-deferrable Diseases. Springer.</a></li>
+      <li><a href="https://doi.org/10.3389/fepid.2025.1597799" target="_blank">Lovaglio P.G. et al. (2025) Estimating long COVID-19 prevalence across definitions and forms of sample selection. Frontiers in Epidemiology.</a></li>
+      <li><a href="https://doi.org/10.1186/s12889-025-21984-1" target="_blank">Boracchini R. et al. (2025) Exploring different modelling approaches to forecast the community acute respiratory infections burden in children. BMC Public Health.</a></li>
+      <li><a href="https://doi.org/10.1177/01600176251327985" target="_blank">Lovaglio P.G., Riussi M. (2025) How is labour demand changing across European regions in the post-COVID-19 era. International Regional Science Review.</a></li>
+      <li><a href="https://doi.org/10.1007/s11135-024-02015-4" target="_blank">Lovaglio P.G., Berta P. (2025) Personal and regional risk factors of being a NEET. Quality and Quantity.</a></li>
+      <li><a href="https://doi.org/10.1002/for.3224" target="_blank">Lovaglio P.G. (2025) Cross-learning with panel data modelling for stacking and forecast time series employment in Europe. Journal of Forecasting.</a></li>
+      <li><a href="https://doi.org/10.1007/s12232-024-00465-8" target="_blank">Lovaglio P.G., Perrelli A. (2024) Individual and regional determinants of women’s participation in the European labour market. International Review of Economics.</a></li>
+      <li><a href="https://CRAN.R-project.org/package=cif" target="_blank">Berta P., Lovaglio P.G., Paruolo P., Verzillo S. (2022) R package cif: Cointegrated ICU Forecasting.</a></li>
+      <li><a href="https://doi.org/10.1136/bmjopen-2023-075185" target="_blank">Borgonovo F., Lovaglio P.G. et al. (2024) Analysis and clinical determinants of post-COVID-19 syndrome in the Lombardy region. BMJ Open.</a></li>
+      <li><a href="https://doi.org/10.1016/j.cca.2022.10.013" target="_blank">Salvioni L. et al. (2022) Surfactant protein D as a biomarker of SARS-CoV-2 infection. Clinica Chimica Acta.</a></li>
+      <li>Cornaggia C.M., Lovaglio P.G. et al. (2023) The effect of differently modulated communications on the COVID-19 pandemic in the young population. Rivista di Psichiatria.</li>
+      <li><a href="https://doi.org/10.1111/labr.12213" target="_blank">Lovaglio P.G. (2022) Do job vacancies variations anticipate employment variations by sector? Labour.</a></li>
+      <li><a href="https://doi.org/10.1371/journal.pone.0257910" target="_blank">Rossi C. et al. (2021) The impact of COVID-19 pandemic on AMI and stroke mortality in Lombardy. PLoS ONE.</a></li>
+      <li><a href="https://doi.org/10.1016/j.healthpol.2021.06.005" target="_blank">Berta P., Lovaglio P.G., Verzillo S. (2021) How have casemix, cost and hospital stay of inpatients in the last year of life changed? Health Policy.</a></li>
+      <li>Lovaglio P.G. (2021) Occupations and Skills in Demand from Web-Based Job Vacancies. Strategies Account Management.</li>
+      <li>Berta P., Lovaglio P.G., Paruolo P., Verzillo S. (2020) Real Time Forecasting of Covid-19 Intensive Care Units demand. HEDG Working Papers.</li>
+      <li><a href="https://doi.org/10.1371/journal.pone.0240150" target="_blank">Berta P., Paruolo P., Verzillo S., Lovaglio P.G. (2020) A bivariate prediction approach for adapting the health care system response to COVID-19. PLoS ONE.</a></li>
+      <li><a href="https://doi.org/10.1007/s11135-019-00940-3" target="_blank">Lovaglio P., Colombo E., Mezzanzanica M. (2020) Comparing time series characteristics of official and web job vacancy data. Quality & Quantity.</a></li>
+      <li>Lovaglio P., Verzillo S., Vittadini G. (2019) Social and Migration-related Inequality in Achievement in Primary and Secondary Education. ISOTIS Report.</li>
+      <li><a href="https://doi.org/10.3390/healthcare7010004" target="_blank">Scaccabarozzi G., Lovaglio P.G. et al. (2019) Monitoring the Italian home palliative care services. Healthcare.</a></li>
+      <li>D'Avanzo B., Lovaglio P.G. et al. (2018) Health Of The Nation Outcome Scales for children and adolescents. Children and Youth Services Review.</li>
+      <li><a href="https://doi.org/10.1002/sam.11372" target="_blank">Lovaglio P.G., Cesarini M., Mercorio F., Mezzanzanica M. (2018) Skills in demand for ICT and statistical occupations. Statistical Analysis and Data Mining.</a></li>
+      <li><a href="https://doi.org/10.1089/jpm.2017.0404" target="_blank">Scaccabarozzi G. et al. (2018) The ARIANNA project. Journal of Palliative Medicine.</a></li>
+      <li><a href="https://doi.org/10.1007/s11135-017-0642-0" target="_blank">Scaccabarozzi G., Lovaglio P.G. (2018) Palliative care at home: quality measurement and organizational drivers. Quality & Quantity.</a></li>
+      <li><a href="https://doi.org/10.1177/0269215517694225" target="_blank">Sattin D., Lovaglio P.G. et al. (2017) A comparative study on assessment procedures and metric properties of coma recovery scale-revised items. Clinical Rehabilitation.</a></li>
+      <li><a href="https://doi.org/10.1111/jep.12704" target="_blank">Scaccabarozzi G., Lovaglio P.G. et al. (2017) Quality assessment of Palliative Home Care in Italy. Journal of Evaluation in Clinical Practice.</a></li>
+      <li><a href="https://doi.org/10.1080/00949655.2016.1243685" target="_blank">Lovaglio P.G., Vacca G. (2017) %GRA: A SAS macro for generalized redundancy analysis. Journal of Statistical Computation and Simulation.</a></li>
+      <li><a href="https://doi.org/10.18637/jss.v074.c01" target="_blank">Lovaglio P.G., Vacca G. (2016) ERA: A SAS Macro for extended redundancy analysis. Journal of Statistical Software.</a></li>
+      <li><a href="https://doi.org/10.1007/s11135-016-0373-7" target="_blank">Lovaglio P.G. (2017) Are quality indicators predictive of compensated injury claims? Quality & Quantity.</a></li>
+      <li><a href="https://doi.org/10.1007/s11634-016-0259-5" target="_blank">Lovaglio P.G., Vacca G., Verzillo S. (2016) Human capital estimation in higher education. Advances in Data Analysis and Classification.</a></li>
+      <li><a href="https://doi.org/10.1007/s11135-014-0058-z" target="_blank">Lovaglio P.G., Boselli R. (2015) Simulation studies of structural equation models with covariates. Quality & Quantity.</a></li>
+      <li><a href="https://doi.org/10.1007/s11135-015-0176-2" target="_blank">Lovaglio P.G., Verzillo S. (2016) Heterogeneous economic returns to higher education. Quality & Quantity.</a></li>
+      <li><a href="https://doi.org/10.1080/00273171.2014.931798" target="_blank">Lovaglio P.G., Vittadini G. (2014) Structural equation models in a redundancy analysis framework with covariates. Multivariate Behavioral Research.</a></li>
+    </ol>
+  </div>
 
-<p>
-Since 2007/2008 academic year, teaching activities in Data Analysis,
-Multivariate Analysis, Computational Statistics and
-<a href="https://elearning.unimib.it/course/info.php?id=60669#en">Data Mining and Machine Learning</a>.
-</p>
+  <div class="en">
+    <h2>Publications</h2>
+    <p>Complete scientific profiles:</p>
+    <div class="link-buttons">
+      <a href="https://scholar.google.com/citations?hl=it&user=hNQB2YwAAAAJ&view_op=list_works" target="_blank">Google Scholar</a>
+      <a href="https://orcid.org/0000-0002-2340-0547" target="_blank">ORCID</a>
+      <a href="https://www.scopus.com/authid/detail.uri?authorId=6505999619" target="_blank">Scopus</a>
+      <a href="https://www.webofscience.com/wos/author/record/1673078" target="_blank">Web of Science</a>
+      <a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=lovaglio+p" target="_blank">PubMed</a>
+    </div>
+    <p>The Italian publication list reports the detailed list. International databases above provide the complete updated records.</p>
+  </div>
+</section>
 
-<h3>Courses</h3>
-<ul>
-<li>Data Mining</li>
-<li>Machine Learning</li>
-<li>Multivariate Analysis</li>
-</ul>
-</div>
+<section id="progetti" class="panel">
+  <div class="it">
+    <h2>Progetti</h2>
 
-</div>
+    <h3>Progetti finanziati / responsabilità scientifica</h3>
+    <ul>
+      <li><a href="https://share.google/BthdxVtkm3M8IBF1z" target="_blank">Development and Maintenance of Web Content Retrieval and Data Processing Pipelines for Statistical Purposes within the Web Intelligence Hub</a> (Eurostat / Cedefop, 2025-2027).</li>
+      <li><a href="https://reform-support.ec.europa.eu/our-projects/country-factsheets/italy_en" target="_blank">Forecasting the Teaching Workforce in Italy</a> (European Commission DG Reform, 2022-2024).</li>
+      <li><a href="https://etendering.ted.europa.eu/cft/cft-display.html?cftId=6559" target="_blank">Towards the European Web Intelligence Hub — European System for Collection and Analysis of Online Job Advertisement Data</a> (Eurostat / Cedefop, 2021-2024).</li>
+      <li><a href="https://www.cedefop.europa.eu/en/about-cedefop/public-procurement/short-term-anticipation-skills-trends-and-vet-demand" target="_blank">Short-term anticipation of skills and VET demand</a> (Cedefop, 2021-2023).</li>
+      <li><a href="https://www.mn.uio.no/farmasi/english/research/projects/eu-covid-19/" target="_blank">EU-COVID-19 - a multinational registry-based linkage study</a> (Norwegian Research Council, 2020-2022).</li>
+      <li><a href="https://www.isotis.org/en/people/pietro-giorgio-lovaglio" target="_blank">ISOTIS: Inclusive Education and Social Support to Tackle Inequalities in Society</a> (Horizon 2020, 2017-2020).</li>
+      <li><a href="https://www.cedefop.europa.eu/en/publications-and-resources/country-reports/real-time-labour-market-information-skill-requirements-setting-eu-system-online" target="_blank">Real-time Labour Market information on Skill Requirements</a> (Cedefop, 2017-2020).</li>
+    </ul>
 
-<!-- CV -->
-<div id="cv" class="panel">
-<h2>CV</h2>
-<a href="cvit.pdf" target="_blank">CV Italiano</a><br>
-<a href="cven.pdf" target="_blank">CV English</a>
-</div>
+    <h3>Board scientifici istituzionali</h3>
+    <ul>
+      <li>ARIANNA project: membro del Board Scientifico e responsabile analisi statistiche.</li>
+      <li>Progetto Demetra: membro del Board Scientifico e della sezione metodologia, statistica, accountability e costo-efficacia.</li>
+      <li>Comitato tecnico-scientifico ISPAT, Provincia autonoma di Trento.</li>
+      <li>Ricerche Agenas e Ministero della Salute sulle cure palliative domiciliari.</li>
+    </ul>
 
-<!-- CONTATTI -->
-<div id="contatti" class="panel">
-<h2>Contatti</h2>
-<p>Email: piergiorgio.lovaglio@unimib.it</p>
-</div>
+    <h3>Ricadute istituzionali delle ricerche svolte</h3>
+    <ul>
+      <li>Metodologia per la definizione dei criteri di inclusione/esclusione e valutazione delle strutture accreditate erogatrici di cure palliative domiciliari nell’ambito dell’Osservatorio delle Buone Pratiche nelle Cure Palliative domiciliari.</li>
+      <li>Metodologia e analisi empirica della valutazione dei Dipartimenti di Salute Mentale in Lombardia, progetto “La valutazione della qualità e dell’esito dei programmi di cura”.</li>
+      <li>Definizione e creazione dell’algoritmo classificativo su cui si basa la classificazione iso-gravità dei pazienti in Residenze Socio Assistenziali della Regione Lombardia (SOSIA).</li>
+      <li>Definizione e creazione dei criteri per l’assegnazione dei voucher assistenziali promossi dalla Regione Lombardia.</li>
+      <li>Definizione dei criteri per la composizione delle graduatorie utili per l’assegnazione di fondi rispetto alla qualità raggiunta dalle RSA accreditate.</li>
+    </ul>
+  </div>
 
+  <div class="en">
+    <h2>Projects</h2>
+    <p>The Italian section contains the detailed project list. Main areas: European Web Intelligence Hub, labour market intelligence, healthcare evaluation, education, public services and data science.</p>
+  </div>
+</section>
+
+<section id="didattica" class="panel">
+  <div class="it">
+    <h2>Didattica</h2>
+
+    <p>
+      Dall’A.A. 2007/2008 ad oggi, attività di docenza nei corsi di Analisi dei dati, Analisi Multivariata, Statistica computazionale,
+      <a href="https://elearning.unimib.it/course/info.php?id=60669" target="_blank">Data Mining e Machine Learning</a>
+      (modelli e strumenti previsivi/classificativi in ambito di grandi moli di dati) presso Corsi di laurea di Statistica e gestione delle informazioni e Scienze Statistiche ed Economiche, Università di Milano-Bicocca (15 cfu).
+    </p>
+
+    <h3>Corsi universitari e master</h3>
+    <ul>
+      <li>Analisi dei dati</li>
+      <li>Analisi Multivariata</li>
+      <li>Statistica computazionale</li>
+      <li>Data Mining</li>
+      <li>Machine Learning</li>
+      <li>Business Intelligence e Big Data Analytics</li>
+    </ul>
+
+    <h3>Dottorato</h3>
+    <ul>
+      <li>Docenza nel corso di Analisi Multivariata / Statistical Models presso Dottorati in Statistica, Statistica e Finanza Matematica, Statistica ed Applicazioni, Economia e Statistica.</li>
+      <li>Membro del Collegio Docenti del Dottorato in Economia, Statistica e Data Science.</li>
+    </ul>
+  </div>
+
+  <div class="en">
+    <h2>Teaching</h2>
+
+    <p>
+      Since academic year 2007/2008, teaching activities in Data Analysis, Multivariate Analysis, Computational Statistics,
+      <a href="https://elearning.unimib.it/course/info.php?id=60669#en" target="_blank">Data Mining and Machine Learning</a>
+      for undergraduate and graduate programmes in Statistics and Information Management and Statistical and Economic Sciences at the University of Milano-Bicocca.
+    </p>
+
+    <h3>Courses and master programmes</h3>
+    <ul>
+      <li>Data Analysis</li>
+      <li>Multivariate Analysis</li>
+      <li>Computational Statistics</li>
+      <li>Data Mining</li>
+      <li>Machine Learning</li>
+      <li>Business Intelligence and Big Data Analytics</li>
+    </ul>
+  </div>
+</section>
+
+<section id="altro" class="panel">
+  <div class="it">
+    <h2>Altro</h2>
+    <p>Sezione dedicata a post, commenti, materiali, foto, allegati, slide, documenti e aggiornamenti.</p>
+  </div>
+  <div class="en">
+    <h2>Other</h2>
+    <p>Section for posts, comments, materials, photos, attachments, slides, documents and updates.</p>
+  </div>
+</section>
+
+<section id="cv" class="panel">
+  <div class="it">
+    <h2>CV</h2>
+    <div class="link-buttons">
+      <a href="cvit.pdf" target="_blank">CV Italiano</a>
+      <a href="cven.pdf" target="_blank">CV English</a>
+    </div>
+  </div>
+  <div class="en">
+    <h2>CV</h2>
+    <div class="link-buttons">
+      <a href="cvit.pdf" target="_blank">Italian CV</a>
+      <a href="cven.pdf" target="_blank">English CV</a>
+    </div>
+  </div>
+</section>
+
+<section id="contatti" class="panel">
+  <div class="it">
+    <h2>Contatti</h2>
+    <p>Email: <a href="mailto:piergiorgio.lovaglio@unimib.it">piergiorgio.lovaglio@unimib.it</a></p>
+    <p>Sito istituzionale: <a href="https://www.unimib.it/pietro-giorgio-lovaglio" target="_blank">Università di Milano-Bicocca</a></p>
+  </div>
+  <div class="en">
+    <h2>Contacts</h2>
+    <p>Email: <a href="mailto:piergiorgio.lovaglio@unimib.it">piergiorgio.lovaglio@unimib.it</a></p>
+    <p>Institutional website: <a href="https://www.unimib.it/pietro-giorgio-lovaglio" target="_blank">University of Milano-Bicocca</a></p>
+  </div>
+</section>
+
+</main>
 </div>
 
 <script>
-function showPanel(id){
-  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-}
+const buttons = document.querySelectorAll('.tab-button');
+const panels = document.querySelectorAll('.panel');
 
-function toggleLang(){
-  document.querySelectorAll('.it').forEach(el => el.style.display = el.style.display === 'none' ? 'block' : 'none');
-  document.querySelectorAll('.en').forEach(el => el.style.display = el.style.display === 'none' ? 'block' : 'none');
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    const target = button.getAttribute('data-panel');
+
+    buttons.forEach(btn => btn.classList.remove('active'));
+    panels.forEach(panel => panel.classList.remove('active'));
+
+    button.classList.add('active');
+    document.getElementById(target).classList.add('active');
+  });
+});
+
+function setLang(lang) {
+  document.querySelectorAll('.it').forEach(el => {
+    el.style.display = lang === 'it' ? 'block' : 'none';
+  });
+
+  document.querySelectorAll('.en').forEach(el => {
+    el.style.display = lang === 'en' ? 'block' : 'none';
+  });
 }
 </script>
 
