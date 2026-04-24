@@ -13,33 +13,65 @@ body {
   color: #000;
 }
 
-.container {
-  max-width: 1000px;
+.page {
+  display: grid;
+  grid-template-columns: 150px 1fr 150px;
+  gap: 25px;
+  max-width: 1250px;
   margin: auto;
-  padding: 35px 25px;
+  padding: 30px 20px;
+}
+
+.side-images {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-top: 90px;
+}
+
+.side-images img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border: 3px solid #000;
+  border-radius: 12px;
+  background: white;
+}
+
+.container {
+  max-width: 900px;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 10px 14px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back:hover {
+  background: #000;
+  color: #ff7a00;
 }
 
 h1 {
-  font-size: 42px;
   text-align: center;
-  margin-bottom: 10px;
+  font-size: 44px;
+  margin: 10px 0 25px;
 }
 
-.intro {
+.box {
+  background: rgba(255,255,255,0.22);
+  border: 3px solid #000;
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 25px;
   font-size: 18px;
   line-height: 1.7;
-  background: rgba(255,255,255,0.18);
-  padding: 22px;
-  border: 3px solid #000;
-  border-radius: 16px;
-}
-
-.section {
-  margin-top: 30px;
-  padding: 22px;
-  border: 3px solid #000;
-  border-radius: 16px;
-  background: rgba(255,255,255,0.22);
 }
 
 h2 {
@@ -59,90 +91,154 @@ ul {
   font-size: 17px;
 }
 
-.back {
-  display: inline-block;
-  margin-bottom: 25px;
-  padding: 10px 14px;
-  border: 2px solid #000;
-  border-radius: 10px;
-  color: #000;
-  text-decoration: none;
-  font-weight: bold;
-}
+@media (max-width: 900px) {
+  .page {
+    display: block;
+  }
 
-.back:hover {
-  background: #000;
-  color: #ff7a00;
+  .side-images {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .side-images img {
+    width: 95px;
+    height: 95px;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="page">
 
-<a class="back" href="index.html">← Back to main site</a>
+  <div class="side-images">
+    <img src="gis.png" alt="gis">
+    <img src="sator.jpg" alt="sator">
+    <img src="lovaglio.bmp" alt="lovaglio">
+  </div>
 
-<h1>Other</h1>
+  <main class="container">
 
-<div class="intro">
-  <p>
-    In questo sito vorrei mettere le foto dei miei viaggi, gli autori preferiti e i gruppi musicali che mi hanno sempre esaltato!
-    Ma non c'è né tempo né spazio, a parte per il <a href="mito.jpg" target="_blank">mito</a>, così vi lascio
-    una perla musicale dei <a href="All.mp3" target="_blank">Led Zeppelin</a>,
-    una comica <a href="franco.mp3" target="_blank">nuova</a> e una
-    <a href="sbirri.wav" target="_blank">vecchia</a>.
-  </p>
+    <a class="back" href="index.html">← Back to main site</a>
 
-  <p>
-    Prima di lasciarci, una chicchissima sull'arredamento urbano
-    <a href="abso.jpg" target="_blank">americano</a>.
-  </p>
+    <h1>Other</h1>
 
-  <p>
-    Un mio <a href="racconto.doc" target="_blank">racconto</a> metropolitano Pulp ambientato tra Milano e Bologna.
-  </p>
+    <div class="box">
+      <p>
+        Un <a href="fragole.soc" target="_blank">racconto su Sofia che scopre le fragole</a>,
+        illuminante sul valore dell'ipotesi positiva nella ricerca scientifica,
+        sull’imprevisto e sull’avvenimento che porta a una novità irriducibile al già noto.
+      </p>
+    </div>
 
-  <p>
-    Un giochino <a href="peanut.exe" target="_blank">carino</a>
-    (tieni cliccato per caricare il tiro e lascia il pulsante per tirare).
-  </p>
+    <div class="box">
+      <h2>Passioni, musica e comiche</h2>
 
-  <p>
-    L'elenco dei migliori <a href="doc2.doc" target="_blank">Nickname romani</a>.
-    Una compilation di <a href="BARZE.zip" target="_blank">BARZELLETTE</a>
-    e attenti agli <a href="shadow.jpg" target="_blank">sconosciuti</a>.
-  </p>
+      <p>
+        In questa sezione vorrei comunicare qualcosa di meno istituzionale:
+        foto, passioni, autori preferiti e i gruppi musicali che mi hanno sempre esaltato!
+      </p>
 
-  <p>
-    Infine l'intervista doppia di
-    <a href="doppia.doc" target="_blank">Totti e Cassano</a>,
-    i <a href="cartelli.doc" target="_blank">cartelli stradali</a> più allucinanti
-    e i <a href="Tit.doc" target="_blank">titoli di giornali</a> più incredibili.
-  </p>
-</div>
+      <p>
+        Ma non c'è né tempo né spazio, a parte per il <a href="mito.jpg" target="_blank">mito</a>,
+        così vi lascio alcune perle.
+      </p>
 
-<div class="section">
-  <h2>Link storici</h2>
-  <p>Tutti i link che mi allietavano durante i lunghi pomeriggi di studio.</p>
+      <p>
+        Una musicale dei <a href="All.mp3" target="_blank">Led Zeppelin</a>.
+      </p>
 
-  <ul>
-    <li><a href="http://www.drzap.it" target="_blank">Le Barzellette del Dr. Zap</a></li>
-    <li><a href="https://www.bastardidentro.it/" target="_blank">Webzine di umorismo</a></li>
-    <li><a href="http://www.trenitalia.it" target="_blank">Orario dei treni</a></li>
-    <li><a href="http://www.segnalidivita.com/beppegrillo/" target="_blank">Beppe Grillo</a></li>
-    <li><a href="http://www.rainews24.rai.it" target="_blank">Telegiornale in diretta</a></li>
-    <li><a href="http://www.tenclub.net/" target="_blank">Pearl Jam</a></li>
-    <li><a href="http://www.ibiblio.org/wm/paint/auth/" target="_blank">Museo virtuale</a></li>
-  </ul>
-</div>
+      <p>
+        Tre comiche:
+        una <a href="franco.mp3" target="_blank">nuova</a>,
+        una <a href="Tortora%20Moretti.mp3" target="_blank">media</a>
+        e una <a href="sbirri.wav" target="_blank">vecchia</a>.
+      </p>
+    </div>
 
-<div class="section">
-  <h2>Link di statistica</h2>
-  <p>
-    Link di statistica utili per tutta la collettività.
-  </p>
-</div>
+    <div class="box">
+      <h2>Varie perle</h2>
+
+      <p>
+        Varie perle
+        <a href="madeinItaly.pptx" target="_blank">made in Italy</a>
+        and
+        <a href="madeinworld.pptx" target="_blank">other</a>.
+      </p>
+
+      <p>
+        Un mio <a href="racconto.doc" target="_blank">racconto metropolitano Pulp</a>
+        ambientato tra Milano e Bologna.
+      </p>
+
+      <p>
+        Una chicchissima sull'arredamento urbano
+        <a href="abso.jpg" target="_blank">americano</a>.
+      </p>
+
+      <p>
+        Un giochino <a href="peanut.exe" target="_blank">carino</a>
+        (tieni cliccato per caricare il tiro e lascia il pulsante per tirare).
+      </p>
+
+      <p>
+        L'elenco dei migliori
+        <a href="doc2.doc" target="_blank">Nickname romani</a>
+        ed espressioni gergali:
+        <a href="rit.docx" target="_blank">romano SELECTION</a>.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>Barzellette, cartelli e titoli</h2>
+
+      <p>
+        Una compilation di <a href="BARZE.zip" target="_blank">BARZELLETTE</a>
+        e attenti agli <a href="shadow.jpg" target="_blank">sconosciuti</a>.
+      </p>
+
+      <p>
+        L’intervista doppia di
+        <a href="doppia.doc" target="_blank">Totti e Cassano</a>,
+        i <a href="cartelli.doc" target="_blank">cartelli stradali</a> più allucinanti,
+        le <a href="insegne.pps" target="_blank">insegne</a>
+        e i <a href="Tit.doc" target="_blank">titoli di giornali</a> più incredibili.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>Stupidari</h2>
+
+      <ul>
+        <li><a href="stupidario%20sport.txt" target="_blank">Interviste di calciatori</a></li>
+        <li><a href="mediche.txt" target="_blank">Stupidario medico</a></li>
+        <li><a href="giustifche.txt" target="_blank">Giustifiche scolastiche</a></li>
+        <li><a href="verbali.jpg" target="_blank">Verbali dei caramba</a></li>
+      </ul>
+    </div>
+
+    <div class="box">
+      <h2>Milano</h2>
+
+      <p>
+        <a href="milano.pps" target="_blank">Milano vecchia</a>,
+        <a href="mivecia.jpg" target="_blank">Milano nuova</a>
+        e i suoi <a href="misteri.docx" target="_blank">misteri</a>.
+      </p>
+    </div>
+
+  </main>
+
+  <div class="side-images">
+    <img src="bati.jpg" alt="bati">
+    <img src="mu.jpg" alt="mu">
+    <img src="ta.jpg" alt="ta">
+  </div>
 
 </div>
 
