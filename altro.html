@@ -8,60 +8,43 @@
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   background: #ff7a00;
   color: #000;
 }
 
-.container {
-  max-width: 1000px;
+.page {
+  display: grid;
+  grid-template-columns: 150px 1fr 150px;
+  gap: 25px;
+  max-width: 1250px;
   margin: auto;
-  padding: 35px 25px;
+  padding: 30px 20px;
 }
 
-h1 {
-  font-size: 42px;
-  text-align: center;
-  margin-bottom: 10px;
+.side-images {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-top: 90px;
 }
 
-.intro {
-  font-size: 18px;
-  line-height: 1.7;
-  background: rgba(255,255,255,0.18);
-  padding: 22px;
+.side-images img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
   border: 3px solid #000;
-  border-radius: 16px;
+  border-radius: 12px;
+  background: white;
 }
 
-.section {
-  margin-top: 30px;
-  padding: 22px;
-  border: 3px solid #000;
-  border-radius: 16px;
-  background: rgba(255,255,255,0.22);
-}
-
-h2 {
-  margin-top: 0;
-  border-bottom: 3px solid #000;
-  padding-bottom: 8px;
-}
-
-a {
-  color: #000;
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-ul {
-  line-height: 2;
-  font-size: 17px;
+.container {
+  max-width: 900px;
 }
 
 .back {
   display: inline-block;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   padding: 10px 14px;
   border: 2px solid #000;
   border-radius: 10px;
@@ -74,79 +57,174 @@ ul {
   background: #000;
   color: #ff7a00;
 }
+
+h1 {
+  text-align: center;
+  font-size: 44px;
+}
+
+.box {
+  background: rgba(255,255,255,0.22);
+  border: 3px solid #000;
+  border-radius: 18px;
+  padding: 24px;
+  margin-bottom: 25px;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+h2 {
+  border-bottom: 3px solid #000;
+}
+
+a {
+  color: #000;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+ul {
+  line-height: 2;
+}
+
+@media (max-width: 900px) {
+  .page { display: block; }
+  .side-images {
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 10px;
+  }
+}
 </style>
 </head>
 
 <body>
 
+<div class="page">
+
+<!-- SINISTRA -->
+<div class="side-images">
+  <img src="gis.png">
+  <img src="sator.jpg">
+  <img src="lovaglio.bmp">
+</div>
+
+<!-- CENTRO -->
 <div class="container">
 
-<a class="back" href="index.html">← Back to main site</a>
+<a class="back" href="index.html">← Back</a>
 
 <h1>Other</h1>
 
-<div class="intro">
-  <p>
-    In questo sito vorrei mettere le foto dei miei viaggi, gli autori preferiti e i gruppi musicali che mi hanno sempre esaltato!
-    Ma non c'è né tempo né spazio, a parte per il <a href="mito.jpg" target="_blank">mito</a>, così vi lascio
-    una perla musicale dei <a href="All.mp3" target="_blank">Led Zeppelin</a>,
-    una comica <a href="franco.mp3" target="_blank">nuova</a> e una
-    <a href="sbirri.wav" target="_blank">vecchia</a>.
-  </p>
-
-  <p>
-    Prima di lasciarci, una chicchissima sull'arredamento urbano
-    <a href="abso.jpg" target="_blank">americano</a>.
-  </p>
-
-  <p>
-    Un mio <a href="racconto.doc" target="_blank">racconto</a> metropolitano Pulp ambientato tra Milano e Bologna.
-  </p>
-
-  <p>
-    Un giochino <a href="peanut.exe" target="_blank">carino</a>
-    (tieni cliccato per caricare il tiro e lascia il pulsante per tirare).
-  </p>
-
-  <p>
-    L'elenco dei migliori <a href="doc2.doc" target="_blank">Nickname romani</a>.
-    Una compilation di <a href="BARZE.zip" target="_blank">BARZELLETTE</a>
-    e attenti agli <a href="shadow.jpg" target="_blank">sconosciuti</a>.
-  </p>
-
-  <p>
-    Infine l'intervista doppia di
-    <a href="doppia.doc" target="_blank">Totti e Cassano</a>,
-    i <a href="cartelli.doc" target="_blank">cartelli stradali</a> più allucinanti
-    e i <a href="Tit.doc" target="_blank">titoli di giornali</a> più incredibili.
-  </p>
+<div class="box">
+<p>
+Un <a href="fragole.soc">racconto su Sofia che scopre le fragole</a>, illuminante sul valore dell'ipotesi positiva nella ricerca scientifica, sull’imprevisto e sull’avvenimento che porta a una novità irriducibile al già noto.
+</p>
 </div>
 
-<div class="section">
-  <h2>Link storici</h2>
-  <p>Tutti i link che mi allietavano durante i lunghi pomeriggi di studio.</p>
+<div class="box">
+<p>
+In questa sezione vorrei comunicare qualcosa di meno istituzionale, foto, passioni, autori preferiti e i gruppi musicali che mi hanno sempre esaltato.
+</p>
 
-  <ul>
-    <li><a href="http://www.drzap.it" target="_blank">Le Barzellette del Dr. Zap</a></li>
-    <li><a href="https://www.bastardidentro.it/" target="_blank">Webzine di umorismo</a></li>
-    
-    <li><a href="https://www.sentieridelcinema.it/category/al-cinema/" target="_blank"> Sentieri del cinema</a></li>
-    <li><a href="https://ultimouomo.com/archivio?type=articoli/" target="_blank"> Ultimo uomo</a></li>
-    <li><a href="https://www.trueriders.it/diari-di-viaggio/" target="_blank"> Diari di viaggio </a></li>
-    <li><a href="https://www.viaggiatori.net/itinerari-di-viaggio/15909/" target="_blank"> Zingarate</a></li>
-    <li><a href="https://www.facebook.com/groups/242876015892453/" target="_blank"> Sei di Rionero se ….</a></li>
-    <li><a href="http://www.segnalidivita.com/beppegrillo/" target="_blank">Beppe Grillo</a></li>
-    <li><a href="http://www.rainews24.rai.it" target="_blank">Telegiornale in diretta</a></li>
-    <li><a href="http://www.tenclub.net/" target="_blank">Pearl Jam</a></li>
-    <li><a href="http://www.ibiblio.org/wm/paint/auth/" target="_blank">Museo virtuale</a></li>
-  </ul>
+<p>
+Ma non c'è né tempo né spazio, a parte per il <a href="mito.jpg">mito</a>, così vi lascio alcune perle.
+</p>
+
+<p>
+Una musicale dei <a href="All.mp3">Led Zeppelin</a>.
+</p>
+
+<p>
+Tre comiche:
+<a href="franco.mp3">nuova</a>,
+<a href="Tortora Moretti.mp3">media</a>,
+<a href="sbirri.wav">vecchia</a>.
+</p>
 </div>
 
-<div class="section">
-  <h2>Link di statistica</h2>
-  <p>
-    Link di statistica utili per tutta la collettività.
-  </p>
+<div class="box">
+<p>
+Varie perle <a href="madeinItaly.pptx">made in Italy</a> e <a href="madeinworld.pptx">other</a>.
+</p>
+
+<p>
+Un mio <a href="racconto.doc">racconto metropolitano Pulp</a>.
+</p>
+
+<p>
+Una chicchissima sull'arredamento urbano <a href="abso.jpg">americano</a>.
+</p>
+
+<p>
+Un giochino <a href="peanut.exe">carino</a>.
+</p>
+
+<p>
+Nickname romani <a href="doc2.doc">ed espressioni gergali</a> e <a href="rit.docx">romano selection</a>.
+</p>
+</div>
+
+<div class="box">
+<p>
+<a href="BARZE.zip">Barzellette</a> e attenti agli <a href="shadow.jpg">sconosciuti</a>.
+</p>
+
+<p>
+<a href="doppia.doc">Totti e Cassano</a>,
+<a href="cartelli.doc">cartelli</a>,
+<a href="insegne.pps">insegne</a>,
+<a href="Tit.doc">titoli</a>.
+</p>
+</div>
+
+<div class="box">
+<h2>Stupidari</h2>
+<ul>
+<li><a href="stupidario sport.txt">Calciatori</a></li>
+<li><a href="mediche.txt">Medico</a></li>
+<li><a href="giustifche.txt">Scuola</a></li>
+<li><a href="verbali.jpg">Carabinieri</a></li>
+</ul>
+</div>
+
+<div class="box">
+<h2>Milano</h2>
+<p>
+<a href="milano.pps">Milano vecchia</a>,
+<a href="mivecia.jpg">Milano nuova</a>,
+<a href="misteri.docx">misteri</a>
+</p>
+</div>
+
+<!-- ⭐ NUOVA SEZIONE AGGIUNTA -->
+<div class="box">
+<h2>Link storici</h2>
+
+<p>Tutti i link che mi allietavano durante i lunghi pomeriggi di studio.</p>
+
+<ul>
+<li><a href="http://www.drzap.it" target="_blank">Le Barzellette del Dr. Zap</a></li>
+<li><a href="https://www.bastardidentro.it/" target="_blank">Webzine di umorismo</a></li>
+<li><a href="https://www.sentieridelcinema.it/category/al-cinema/" target="_blank">Sentieri del cinema</a></li>
+<li><a href="https://ultimouomo.com/archivio?type=articoli/" target="_blank">Ultimo uomo</a></li>
+<li><a href="https://www.trueriders.it/diari-di-viaggio/" target="_blank">Diari di viaggio</a></li>
+<li><a href="https://www.viaggiatori.net/itinerari-di-viaggio/15909/" target="_blank">Zingarate</a></li>
+<li><a href="https://www.facebook.com/groups/242876015892453/" target="_blank">Sei di Rionero se…</a></li>
+<li><a href="http://www.segnalidivita.com/beppegrillo/" target="_blank">Beppe Grillo</a></li>
+<li><a href="http://www.rainews24.rai.it" target="_blank">Telegiornale in diretta</a></li>
+<li><a href="http://www.tenclub.net/" target="_blank">Pearl Jam</a></li>
+<li><a href="http://www.ibiblio.org/wm/paint/auth/" target="_blank">Museo virtuale</a></li>
+</ul>
+</div>
+
+</div>
+
+<!-- DESTRA -->
+<div class="side-images">
+  <img src="bati.jpg">
+  <img src="mu.jpg">
+  <img src="ta.jpg">
 </div>
 
 </div>
