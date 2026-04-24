@@ -83,6 +83,22 @@ body {
   cursor: pointer;
 }
 
+.menu-link {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 11px 12px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.menu-link:hover {
+  background: rgba(255,255,255,0.18);
+}
+  
 .menu button:hover,
 .menu button.active {
   background: rgba(255,255,255,0.18);
@@ -212,7 +228,7 @@ a {
     <button class="tab-button" data-panel="pubblicazioni">Pubs</button>
     <button class="tab-button" data-panel="progetti">Projects</button>
     <button class="tab-button" data-panel="didattica">Teaching</button>
-    <button class="tab-button" data-panel="altro">Other</button>
+    <a class="menu-link" href="altro.html">Other</a>
     <button class="tab-button" data-panel="cv">CV</button>
     <button class="tab-button" data-panel="contatti">Contacts</button>
   </div>
